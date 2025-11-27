@@ -1,18 +1,169 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css");
-h1, h2, h3 {
+h1, .logo {
   font-family: "Shrikhand", cursive;
 }
 
-.logo {
-  font-family: "Shrikhand", cursive;
-}
-
-p {
+p, h2, h3 {
   font-family: "Roboto", sans-serif;
 }
 
-header h1 {
-  display: none;
+html {
+  width: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 10;
+}
+header img {
+  width: 197px;
+  height: 36px;
+  margin: 14px 89px;
+}
+
+#reservation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #F6F6F6;
+  padding-bottom: 55px;
+}
+#reservation .search {
+  position: relative;
+  width: 100%;
+  height: 50px;
+}
+#reservation .search::before {
+  content: "\f3c5";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 50%;
+  transform: translateX(calc(-50% - 80px));
+  top: 50%;
+  translate: 0 -50%;
+  color: #353535;
+  font-size: 16px;
+  pointer-events: none;
+}
+#reservation .search:not(:has(#searchbar:-moz-placeholder))::before {
+  opacity: 0;
+}
+#reservation .search:not(:has(#searchbar:placeholder-shown))::before {
+  opacity: 0;
+}
+#reservation .search input {
+  border: 0;
+  padding: 0;
+}
+#reservation .explore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#reservation .explore h2, #reservation .explore p {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+#reservation .explore h2 {
+  font-size: 24px;
+  padding: 0 15%;
+  margin-top: 39px;
+  margin-bottom: 10px;
+}
+#reservation .explore p {
+  padding: 0 6%;
+  margin-top: 0;
+  font-weight: 300;
+  font-size: 18px;
+}
+#reservation .explore a {
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 218px;
+  font-style: normal;
+  color: white;
+  background: linear-gradient(#FF79DA, #9356DC);
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
+  border-radius: 25px;
+}
+#reservation #searchbar {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #353535;
+  background-color: #EAEAEA;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+#fonctionnement {
+  padding: 0 20px;
+}
+#fonctionnement ol {
+  padding-left: 0;
+  counter-reset: step;
+}
+#fonctionnement ol li {
+  list-style: none;
+  position: relative;
+  counter-increment: step;
+  margin-left: 10px;
+  position: relative;
+  z-index: 10;
+}
+#fonctionnement ol li::before {
+  content: counter(step);
+  position: absolute;
+  left: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  background: #9356DC;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1rem;
+}
+#fonctionnement ol li .li-content {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 30px 0;
+  height: 72px;
+  width: 86%;
+  background-color: #F6F6F6;
+  border-radius: 20px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+  padding-left: 40px;
+  gap: 25px;
+}
+#fonctionnement ol li .li-content i {
+  font-size: 24px;
+}
+#fonctionnement ol li .li-content p {
+  margin: 0;
 }/*# sourceMappingURL=style.css.map */

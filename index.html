@@ -13,40 +13,45 @@
 
     <!-- EN-TÊTE -->
     <header>
-        <h1>ohmyfood</h1>
+        <h1 class="sr-only">ohmyfood</h1>
         <img src="assets\logo\ohmyfood.png" alt="Ohmyfood">
     </header>
 
     <!-- CONTENU PRINCIPAL -->
     <main>
         <!-- Explorer et recherche -->
-        <section>
+        <section id="reservation">
             <div class="search">
-                <i class="fa-solid fa-location-dot"></i>
-                <input type="text" name="search" placeholder="Paris, Belleville" autofocus="">
+                <input id="searchbar" type="text" name="search" placeholder="Paris, Belleville" autofocus="">
             </div>
             <div class="explore">
                 <h2>Réservez le menu qui vous convient</h2>
                 <p>Découvrez des restaurants d'exception, selectionnés par nos soins.</p>
-                <a href="#restaurants">Explorer nos restaurant</a>
+                <a href="#restaurants">Explorer nos restaurants</a>
             </div>
         </section>
 
         <!-- Fonctionnement -->
-        <section id="fontionnement">
+        <section id="fonctionnement">
             <h2>Fonctionnement</h2>
             <ol>
                 <li>
-                    <i class="fa-solid fa-mobile-screen-button"></i>
-                    <p>Choisissez un restaurant</p>
+                    <div class="li-content">
+                        <i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>
+                        <p>Choisissez un restaurant</p>
+                    </div>
                 </li>
                 <li>
-                    <i class="fa-solid fa-list-ul"></i>
-                    <p>Composez votre menu</p>
+                    <div class="li-content">
+                        <i class="fa-solid fa-list-ul" aria-hidden="true"></i>
+                        <p>Composez votre menu</p>
+                    </div>
                 </li>
                 <li>
-                    <i class="fa-solid fa-store"></i>
-                    <p>Dégustez au restaurant</p>
+                    <div class="li-content">
+                        <i class="fa-solid fa-store" aria-hidden="true"></i>
+                        <p>Dégustez au restaurant</p>
+                    </div>
                 </li>
             </ol>
         </section>
@@ -60,7 +65,7 @@
                         <h3>La palette du goût</h3>
                         <p>Ménilmontant</p>
                     </div>
-                    <i class="fa-regular fa-heart"></i>
+                    <i class="fa-regular fa-heart" aria-label="Ajouter aux favoris"></i>
                 </div>
             </card>
             <card>
@@ -70,7 +75,7 @@
                         <h3>La note enchantée</h3>
                         <p>Charonne</p>
                     </div>
-                    <i class="fa-regular fa-heart"></i>
+                    <i class="fa-regular fa-heart" aria-label="Ajouter aux favoris"></i>
                 </div>
             </card>
             <card>
@@ -80,7 +85,7 @@
                         <h3>À la française</h3>
                         <p>Cité Rouge</p>
                     </div>
-                    <i class="fa-regular fa-heart"></i>
+                    <i class="fa-regular fa-heart" aria-label="Ajouter aux favoris"></i>
                 </div>
             </card>
             <card>
@@ -90,7 +95,7 @@
                         <h3>Le délice des sens</h3>
                         <p>Folie-Méricourt</p>
                     </div>
-                    <i class="fa-regular fa-heart"></i>
+                    <i class="fa-regular fa-heart" aria-label="Ajouter aux favoris"></i>
                 </div>
             </card>
         </section>
@@ -101,11 +106,11 @@
         <h2>ohmyfood</h2>
         <div>
             <a href="#">
-                <i class="fa-solid fa-utensils"></i>
+                <i class="fa-solid fa-utensils" aria-hidden="true"></i>
                 Proposer un restaurant
             </a>
             <a href="#">
-                <i class="fa-solid fa-handshake-angle"></i>
+                <i class="fa-solid fa-handshake-angle" aria-hidden="true"></i>
                 Devenir partenaire
             </a>
             <a href="#">Mentions légales</a>
