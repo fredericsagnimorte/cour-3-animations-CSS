@@ -188,26 +188,7 @@ header img {
 #restaurants h2 {
   margin-bottom: 5px;
 }
-#restaurants a {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-  position: relative;
-}
-#restaurants a .new {
-  width: 80px;
-  height: 29px;
-  background-color: #99E2D0;
-  border-radius: 2px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #008766;
-  position: absolute;
-  right: 15px;
-  top: 15px;
-}
-#restaurants a .card {
+#restaurants .card {
   height: 251px;
   width: 340px;
   max-height: 251px;
@@ -218,14 +199,41 @@ header img {
   overflow: hidden;
   border-radius: 15px;
   background: white;
+  position: relative;
 }
-#restaurants a .card img {
+#restaurants .card button {
+  border: none;
+  background: none;
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+}
+#restaurants .card a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  position: relative;
+}
+#restaurants .card a .new {
+  width: 80px;
+  height: 29px;
+  background-color: #99E2D0;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #008766;
+  position: absolute;
+  right: 15px;
+  top: 80px;
+}
+#restaurants .card img {
   height: 231px;
   width: 346px;
   -o-object-fit: cover;
      object-fit: cover;
 }
-#restaurants a .card .card-content {
+#restaurants .card .card-content {
   padding: 0 20px;
   min-height: 80px;
   width: 300px;
@@ -234,7 +242,7 @@ header img {
   align-items: center;
   flex-direction: row;
 }
-#restaurants a .card .card-content .card-title {
+#restaurants .card .card-content .card-title {
   font-size: 18px;
 }
 

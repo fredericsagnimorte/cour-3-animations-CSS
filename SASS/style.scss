@@ -226,27 +226,7 @@ header{
     margin-bottom: 5px;
   }
 
-  a{
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    position: relative;
-    
-    .new{
-      width: 80px;
-      height: 29px;
-      background-color: $light-green;
-      border-radius: 2px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #008766;
-      position: absolute;
-      right: 15px;
-      top : 15px;
-    }
-
-    .card{
+  .card{
       height: 251px;
       width: 340px;
       max-height: 251px;
@@ -257,6 +237,36 @@ header{
       overflow: hidden;
       border-radius: 15px;
       background: white;
+      position: relative;
+
+      button{
+        border: none;
+        background: none;
+        position: absolute;
+        right: 30px;
+        bottom: 30px;
+      }
+
+        a{
+          text-decoration: none;
+          color: inherit;
+          display: block;
+          position: relative;
+          
+          .new{
+            width: 80px;
+            height: 29px;
+            background-color: $light-green;
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #008766;
+            position: absolute;
+            right: 15px;
+            top : 80px;
+          }
+        }
       
       img{
         height: 231px;
@@ -273,24 +283,13 @@ header{
         align-items: center;
         flex-direction: row;
 
-        // .heart-gradient::before {
-        //   background: linear-gradient($purple, $pink);
-
-        //   /* clip pour n'afficher le gradient que dans la forme du glyphe */
-        //   -webkit-background-clip: text;
-        //   background-clip: text;
-
-        //   /* rendre le "texte" transparent pour laisser voir le background */
-        //   -webkit-text-fill-color: transparent;
-        //   color: transparent;
-        // }
-
         .card-title{
           font-size: 18px;
         }
       }
     }
-  }
+
+
 }
 
 footer{
