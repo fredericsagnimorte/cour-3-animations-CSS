@@ -13,6 +13,7 @@ $green : #008766;
 $light-green : #99E2D0;
 $background : #F6F6F6;
 $grey : #353535;
+$grey-icons : #7E7E7E; 
 $grey2 :#EAEAEA;
 
 // définition de la police d'écriture
@@ -26,6 +27,10 @@ h1, .logo {
 
 p , h2, h3 {
   font-family: $primary-font;
+}
+
+p, h3{
+  margin: 0;
 }
 
 
@@ -142,7 +147,8 @@ header{
 }
 
 #fonctionnement {
-  padding: 0 20px;
+  padding: 0 20px 30px 20px;
+
 
   ol {
     padding-left: 0;
@@ -193,6 +199,10 @@ header{
 
         i {
           font-size: 24px;
+          color: $grey-icons;
+          &.purple-icon{
+            color: $purple;
+          }
         }
 
         p {
@@ -200,5 +210,120 @@ header{
         }
       }
     }
+  }
+}
+
+#restaurants{
+  background-color: $background;
+  padding: 50px 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 20px;
+
+  h2{
+    margin-bottom: 5px;
+  }
+
+  a{
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    position: relative;
+    
+    .new{
+      width: 80px;
+      height: 29px;
+      background-color: $light-green;
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #008766;
+      position: absolute;
+      right: 15px;
+      top : 15px;
+    }
+
+    .card{
+      height: 251px;
+      width: 340px;
+      max-height: 251px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      flex-direction: column;
+      overflow: hidden;
+      border-radius: 15px;
+      background: white;
+      
+      img{
+        height: 231px;
+        width: 346px;
+        object-fit: cover;
+      }
+      
+      .card-content{
+        padding: 0 20px;
+        min-height: 80px;
+        width: 300px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+
+        // .heart-gradient::before {
+        //   background: linear-gradient($purple, $pink);
+
+        //   /* clip pour n'afficher le gradient que dans la forme du glyphe */
+        //   -webkit-background-clip: text;
+        //   background-clip: text;
+
+        //   /* rendre le "texte" transparent pour laisser voir le background */
+        //   -webkit-text-fill-color: transparent;
+        //   color: transparent;
+        // }
+
+        .card-title{
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+
+footer{
+  background: $grey;
+  color: white;
+  padding-left: 20px;
+
+  h2{
+    font-family: $font-logo;
+    margin:0 0 20px 0;
+    padding-top: 20px;
+    font-weight: 400;
+    font-size: 18px;
+  }
+
+  ul{
+    list-style: none;
+    font-family: $primary-font;
+    margin: 0;
+    padding: 0;
+
+    li{
+      margin-top: 10px;
+    }
+  }
+
+  a{
+    text-decoration: none;
+    color: white;
+  }
+
+  p{
+    margin-top: 20px;
+    padding-bottom: 20px;
   }
 }

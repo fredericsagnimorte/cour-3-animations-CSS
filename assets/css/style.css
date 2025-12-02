@@ -9,6 +9,10 @@ p, h2, h3 {
   font-family: "Roboto", sans-serif;
 }
 
+p, h3 {
+  margin: 0;
+}
+
 html {
   width: 100%;
 }
@@ -116,7 +120,7 @@ header img {
 }
 
 #fonctionnement {
-  padding: 0 20px;
+  padding: 0 20px 30px 20px;
 }
 #fonctionnement ol {
   padding-left: 0;
@@ -163,7 +167,103 @@ header img {
 }
 #fonctionnement ol li .li-content i {
   font-size: 24px;
+  color: #7E7E7E;
+}
+#fonctionnement ol li .li-content i.purple-icon {
+  color: #9356DC;
 }
 #fonctionnement ol li .li-content p {
   margin: 0;
+}
+
+#restaurants {
+  background-color: #F6F6F6;
+  padding: 50px 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 20px;
+}
+#restaurants h2 {
+  margin-bottom: 5px;
+}
+#restaurants a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  position: relative;
+}
+#restaurants a .new {
+  width: 80px;
+  height: 29px;
+  background-color: #99E2D0;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #008766;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+#restaurants a .card {
+  height: 251px;
+  width: 340px;
+  max-height: 251px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 15px;
+  background: white;
+}
+#restaurants a .card img {
+  height: 231px;
+  width: 346px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#restaurants a .card .card-content {
+  padding: 0 20px;
+  min-height: 80px;
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+#restaurants a .card .card-content .card-title {
+  font-size: 18px;
+}
+
+footer {
+  background: #353535;
+  color: white;
+  padding-left: 20px;
+}
+footer h2 {
+  font-family: "Shrikhand", cursive;
+  margin: 0 0 20px 0;
+  padding-top: 20px;
+  font-weight: 400;
+  font-size: 18px;
+}
+footer ul {
+  list-style: none;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+footer ul li {
+  margin-top: 10px;
+}
+footer a {
+  text-decoration: none;
+  color: white;
+}
+footer p {
+  margin-top: 20px;
+  padding-bottom: 20px;
 }/*# sourceMappingURL=style.css.map */
