@@ -131,6 +131,7 @@ header{
       margin-top: 0;
       font-weight: 300;
       font-size: 18px;
+      color: $grey;
     }
 
     a{
@@ -231,7 +232,6 @@ header{
         justify-content: flex-start;
         margin: 30px 0;
         height: 72px;
-        width: 86%;
         background-color: $background;
         border-radius: 20px;
         box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
@@ -408,7 +408,7 @@ footer{
     list-style: none;
     font-family: $primary-font;
     margin: 0;
-    padding: 0;
+    padding: 0 0 30px 0;
 
     li{
       margin-top: 10px;
@@ -419,11 +419,6 @@ footer{
     text-decoration: none;
     color: white;
   }
-
-  p{
-    margin-top: 20px;
-    padding-bottom: 20px;
-  }
 }
 
 
@@ -433,8 +428,62 @@ footer{
 
 // affichage desktop
 @media screen and (min-width:1440px) {
+  #reservation{
+    .explore{
+      width: 100%;
+      gap: 20px;
+
+      h2{
+        font-size: 40px;
+        font-weight: 700;
+      }
+    }
+  }
+
+  #fonctionnement{
+    padding: 0 194px;
+    margin: 50px 0;
+
+    ol{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      li{
+        width: 30%;
+      }
+    }
+  }
+
   #restaurants{
+    padding: 0 194px 30px 194px;
+
     .card{
+      height: 251px;
+      width: 490px;
+      max-height: 251px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      flex-direction: column;
+      overflow: hidden;
+      border-radius: 15px;
+      background: white;
+      position: relative;
+
+        a{
+          text-decoration: none;
+          color: inherit;
+          display: block;
+          position: relative;
+          width: 100%;
+          
+          img{
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+
       .heart-checkbox {
         &__elements {
             input:hover ~ .fa-solid{
@@ -451,4 +500,44 @@ footer{
       }
     }
   }
+
+  footer{
+    background: $grey;
+    color: white;
+    padding: 30px 30px 20px 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 60px;
+
+    h2{
+      font-family: $font-logo;
+      margin: 0;
+      padding: 0;
+      font-size: 18px;
+      order: 2;
+    }
+
+    ul{
+      list-style: none;
+      font-family: $primary-font;
+      margin: 0;
+      padding: 0;
+      order: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      gap: 20px;
+
+      li{
+        margin: 0;
+        
+        a{
+          display: inline-flex;
+          gap:10px;
+        }
+      }
+    }
+  }
+
 }

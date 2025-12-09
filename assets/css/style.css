@@ -103,6 +103,7 @@ header img {
   margin-top: 0;
   font-weight: 300;
   font-size: 18px;
+  color: #353535;
 }
 #reservation .explore a {
   margin-top: 18px;
@@ -190,7 +191,6 @@ header img {
   justify-content: flex-start;
   margin: 30px 0;
   height: 72px;
-  width: 86%;
   background-color: #F6F6F6;
   border-radius: 20px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
@@ -346,7 +346,7 @@ footer ul {
   list-style: none;
   font-family: "Roboto", sans-serif;
   margin: 0;
-  padding: 0;
+  padding: 0 0 30px 0;
 }
 footer ul li {
   margin-top: 10px;
@@ -355,12 +355,56 @@ footer a {
   text-decoration: none;
   color: white;
 }
-footer p {
-  margin-top: 20px;
-  padding-bottom: 20px;
-}
 
 @media screen and (min-width: 1440px) {
+  #reservation .explore {
+    width: 100%;
+    gap: 20px;
+  }
+  #reservation .explore h2 {
+    font-size: 40px;
+    font-weight: 700;
+  }
+  #fonctionnement {
+    padding: 0 194px;
+    margin: 50px 0;
+  }
+  #fonctionnement ol {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #fonctionnement ol li {
+    width: 30%;
+  }
+  #restaurants {
+    padding: 0 194px 30px 194px;
+  }
+  #restaurants .card {
+    height: 251px;
+    width: 490px;
+    max-height: 251px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 15px;
+    background: white;
+    position: relative;
+  }
+  #restaurants .card a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    position: relative;
+    width: 100%;
+  }
+  #restaurants .card a img {
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
   #restaurants .card .heart-checkbox__elements input:hover ~ .fa-solid {
     opacity: 1;
     transform: scale(1);
@@ -369,5 +413,39 @@ footer p {
   #restaurants .card .heart-checkbox__elements input:hover ~ .fa-regular {
     transform: scale(0);
     transition: transform 0ms 290ms;
+  }
+  footer {
+    background: #353535;
+    color: white;
+    padding: 30px 30px 20px 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 60px;
+  }
+  footer h2 {
+    font-family: "Shrikhand", cursive;
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    order: 2;
+  }
+  footer ul {
+    list-style: none;
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+    order: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 20px;
+  }
+  footer ul li {
+    margin: 0;
+  }
+  footer ul li a {
+    display: inline-flex;
+    gap: 10px;
   }
 }/*# sourceMappingURL=style.css.map */
