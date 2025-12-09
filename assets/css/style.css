@@ -1,6 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css");
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 h1, .logo {
   font-family: "Shrikhand", cursive;
 }
@@ -106,6 +117,27 @@ header img {
   font-family: "Roboto", sans-serif;
   text-decoration: none;
   border-radius: 25px;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  transition: background 300ms, box-shadow 300ms;
+  position: relative;
+  z-index: 1;
+}
+#reservation .explore a:hover::after {
+  opacity: 1;
+}
+#reservation .explore a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(rgb(255, 197.5, 239.1231343284), rgb(187.5, 149.375, 233.125));
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
+  transition: background 300ms, box-shadow 300ms;
+  opacity: 0;
+  border-radius: 25px;
+  z-index: -1;
 }
 #reservation #searchbar {
   width: 100%;
@@ -188,6 +220,13 @@ header img {
 #restaurants h2 {
   margin-bottom: 5px;
 }
+#restaurants .cards {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
 #restaurants .card {
   height: 251px;
   width: 340px;
@@ -201,20 +240,65 @@ header img {
   background: white;
   position: relative;
 }
-#restaurants .card button {
-  border: none;
-  background: none;
+#restaurants .card .heart-checkbox {
   position: absolute;
   right: 30px;
   bottom: 30px;
 }
-#restaurants .card a {
+#restaurants .card .heart-checkbox__elements {
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+#restaurants .card .heart-checkbox__elements input {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  cursor: pointer;
+  z-index: 3;
+}
+#restaurants .card .heart-checkbox__elements .fa-regular,
+#restaurants .card .heart-checkbox__elements .fa-solid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s;
+}
+#restaurants .card .heart-checkbox__elements .fa-regular {
+  opacity: 1;
+  z-index: 1;
+}
+#restaurants .card .heart-checkbox__elements .fa-solid {
+  transform: scale(0);
+  opacity: 0;
+  color: transparent;
+  background: linear-gradient(#9356DC, #FF79DA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  z-index: 2;
+}
+#restaurants .card .heart-checkbox__elements input:checked ~ .fa-regular {
+  opacity: 0;
+}
+#restaurants .card .heart-checkbox__elements input:checked ~ .fa-solid {
+  animation: pulse 0.3s;
+  transform: scale(1);
+  opacity: 1;
+}
+#restaurants a {
   text-decoration: none;
   color: inherit;
   display: block;
   position: relative;
 }
-#restaurants .card a .new {
+#restaurants a .new {
   width: 80px;
   height: 29px;
   background-color: #99E2D0;
@@ -227,13 +311,13 @@ header img {
   right: 15px;
   top: 80px;
 }
-#restaurants .card img {
+#restaurants img {
   height: 231px;
   width: 346px;
   -o-object-fit: cover;
      object-fit: cover;
 }
-#restaurants .card .card-content {
+#restaurants .card-content {
   padding: 0 20px;
   min-height: 80px;
   width: 300px;
@@ -242,7 +326,7 @@ header img {
   align-items: center;
   flex-direction: row;
 }
-#restaurants .card .card-content .card-title {
+#restaurants .card-content .card-title {
   font-size: 18px;
 }
 
@@ -274,4 +358,16 @@ footer a {
 footer p {
   margin-top: 20px;
   padding-bottom: 20px;
+}
+
+@media screen and (min-width: 1440px) {
+  #restaurants .card .heart-checkbox__elements input:hover ~ .fa-solid {
+    opacity: 1;
+    transform: scale(1);
+    transition: transform 0.3s;
+  }
+  #restaurants .card .heart-checkbox__elements input:hover ~ .fa-regular {
+    transform: scale(0);
+    transition: transform 0ms 290ms;
+  }
 }/*# sourceMappingURL=style.css.map */
