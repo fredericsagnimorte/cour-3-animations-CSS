@@ -66,10 +66,17 @@ header{
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
   position: relative;
   z-index: 10;
+
   img{
     width: 197px;
     height: 36px;
     margin: 14px 89px;
+  }
+
+  a{
+    position: absolute;
+    top: 24px;
+    left: 20px;
   }
 }
 
