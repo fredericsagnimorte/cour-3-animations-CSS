@@ -10,6 +10,16 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+        <!-- Chargement -->
+    <div id="loading">
+        <div class="load">
+            <div class="load__bar load__bar--1"></div>
+            <div class="load__bar load__bar--2"></div>
+            <div class="load__bar load__bar--3"></div>
+            <div class="load__bar load__bar--4"></div>
+            <div class="load__bar load__bar--5"></div>
+        </div>
+    </div>
 
     <!-- EN-TÊTE -->
     <header>
@@ -19,6 +29,7 @@
 
     <!-- CONTENU PRINCIPAL -->
     <main>
+
         <!-- Explorer et recherche -->
         <section id="reservation">
             <div class="search">
@@ -57,86 +68,88 @@
         </section>
         <!-- Restaurants -->
         <section id="restaurants">
-            <h2>Restaurants</h2>
-            <div class="cards">
-                <article class="card">
-                    <a href="restaurants/palette.html">
-                        <div class="new">
-                            <p>Nouveau</p>
-                        </div>
-                        <img src="assets/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="Image d'un plat">
-                        <div class="card-content">
-                            <div class="card-txt">
-                                <h3 class="card-title">La palette du goût</h3>
-                                <p class="card-subtitle">Ménilmontant</p>
+            <div class="width-ajust">
+                <h2>Restaurants</h2>
+                <div class="cards">
+                    <article class="card">
+                        <a href="restaurants/palette.html">
+                            <div class="new">
+                                <p>Nouveau</p>
+                            </div>
+                            <img src="assets/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="Image d'un plat">
+                            <div class="card-content">
+                                <div class="card-txt">
+                                    <h3 class="card-title">La palette du goût</h3>
+                                    <p class="card-subtitle">Ménilmontant</p>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="heart-checkbox">
+                            <div class="heart-checkbox__elements">
+                                <input type="checkbox" name="favoris" value="la-palette-du-gout" aria-label="Ajouter aux favoris">
+                                <i class="fa-regular fa-heart fa-xl" aria-hidden="true"></i>
+                                <i class="fa-solid fa-heart fa-xl  gradient-icon" aria-hidden="true"></i>
                             </div>
                         </div>
-                    </a>
-                    <div class="heart-checkbox">
-                        <div class="heart-checkbox__elements">
-                            <input type="checkbox" name="favoris" value="la-palette-du-gout" aria-label="Ajouter aux favoris">
-                            <i class="fa-regular fa-heart fa-xl" aria-hidden="true"></i>
-                            <i class="fa-solid fa-heart fa-xl  gradient-icon" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                </article>
-                <article class="card">
-                    <a href="restaurants/enchantee.html">
-                        <div class="new">
-                            <p>Nouveau</p>
-                        </div>
-                        <img src="assets/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="Image d'un plat">
-                        <div class="card-content">
-                            <div class="card-txt">
-                                <h3 class="card-title">La note enchantée</h3>
-                                <p class="card-subtitle">Charonne</p>
+                    </article>
+                    <article class="card">
+                        <a href="restaurants/enchantee.html">
+                            <div class="new">
+                                <p>Nouveau</p>
+                            </div>
+                            <img src="assets/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="Image d'un plat">
+                            <div class="card-content">
+                                <div class="card-txt">
+                                    <h3 class="card-title">La note enchantée</h3>
+                                    <p class="card-subtitle">Charonne</p>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="heart-checkbox">
+                            <div class="heart-checkbox__elements">
+                                <input type="checkbox" name="favoris" value="la-note-enchantee" aria-label="Ajouter aux favoris">
+                                <i class="fa-regular fa-heart fa-xl" aria-hidden="true"></i>
+                                <i class="fa-solid fa-heart fa-xl  gradient-icon" aria-hidden="true"></i>
                             </div>
                         </div>
-                    </a>
-                    <div class="heart-checkbox">
-                        <div class="heart-checkbox__elements">
-                            <input type="checkbox" name="favoris" value="la-note-enchantee" aria-label="Ajouter aux favoris">
-                            <i class="fa-regular fa-heart fa-xl" aria-hidden="true"></i>
-                            <i class="fa-solid fa-heart fa-xl  gradient-icon" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                </article>
-                <article class="card">
-                    <a href="restaurants/francaise.html">
-                        <img src="assets/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="Image d'un plat">
-                        <div class="card-content">
-                            <div class="card-txt">
-                                <h3 class="card-title">À la française</h3>
-                                <p class="card-subtitle">Cité Rouge</p>
+                    </article>
+                    <article class="card">
+                        <a href="restaurants/francaise.html">
+                            <img src="assets/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="Image d'un plat">
+                            <div class="card-content">
+                                <div class="card-txt">
+                                    <h3 class="card-title">À la française</h3>
+                                    <p class="card-subtitle">Cité Rouge</p>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="heart-checkbox">
+                            <div class="heart-checkbox__elements">
+                                <input type="checkbox" name="favoris" value="a-la-francaise" aria-label="Ajouter aux favoris">
+                                <i class="fa-regular fa-heart fa-xl" aria-hidden="true"></i>
+                                <i class="fa-solid fa-heart fa-xl  gradient-icon" aria-hidden="true"></i>
                             </div>
                         </div>
-                    </a>
-                    <div class="heart-checkbox">
-                        <div class="heart-checkbox__elements">
-                            <input type="checkbox" name="favoris" value="a-la-francaise" aria-label="Ajouter aux favoris">
-                            <i class="fa-regular fa-heart fa-xl" aria-hidden="true"></i>
-                            <i class="fa-solid fa-heart fa-xl  gradient-icon" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                </article>
-                <article class="card">
-                    <a href="restaurants/delice.html">
-                        <img src="assets/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Image d'un plat">
-                        <div class="card-content">
-                            <div class="card-txt">
-                                <h3 class="card-title">Le délice des sens</h3>
-                                <p class="card-subtitle">Folie-Méricourt</p>
+                    </article>
+                    <article class="card">
+                        <a href="restaurants/delice.html">
+                            <img src="assets/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Image d'un plat">
+                            <div class="card-content">
+                                <div class="card-txt">
+                                    <h3 class="card-title">Le délice des sens</h3>
+                                    <p class="card-subtitle">Folie-Méricourt</p>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="heart-checkbox">
+                            <div class="heart-checkbox__elements">
+                                <input type="checkbox" name="favoris" value="le-delice-des-sens" aria-label="Ajouter aux favoris">
+                                <i class="fa-regular fa-heart fa-xl" aria-hidden="true"></i>
+                                <i class="fa-solid fa-heart fa-xl  gradient-icon" aria-hidden="true"></i>
                             </div>
                         </div>
-                    </a>
-                    <div class="heart-checkbox">
-                        <div class="heart-checkbox__elements">
-                            <input type="checkbox" name="favoris" value="le-delice-des-sens" aria-label="Ajouter aux favoris">
-                            <i class="fa-regular fa-heart fa-xl" aria-hidden="true"></i>
-                            <i class="fa-solid fa-heart fa-xl  gradient-icon" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                </article>
+                    </article>
+                </div>
             </div>
         </section>
     </main>

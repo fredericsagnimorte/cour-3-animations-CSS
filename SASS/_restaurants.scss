@@ -1,0 +1,83 @@
+// les restaurants
+#banner{
+  z-index: -1;
+  img{
+    width: 100%;
+  }
+}
+
+#menu{
+  z-index: 1;
+  border-radius: 20px 20px 0 0;
+  background-color: $background;
+  padding-top: 20px;
+  margin-top: -50px;
+  position: relative;
+
+  h2{
+    font-family: $font-logo;
+    margin: 0 0 20px 20px;
+    font-size: 1.75em;
+    font-weight: normal;
+  }
+
+  .heart-checkbox {
+    position: absolute;
+    right: 30px;
+    top: 25px;
+
+    &__elements {
+      position: relative;
+      width: 30px;
+      height: 30px;
+
+      input {
+        opacity: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        cursor: pointer;
+        z-index: 3;
+      }
+
+      .fa-regular,
+      .fa-solid {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: opacity 0.3s;
+      }
+
+      .fa-regular {
+        opacity: 1;
+        z-index: 1;
+      }
+
+      .fa-solid {
+        transform: scale(0);
+        opacity: 0;
+        color: transparent; 
+        background: linear-gradient($purple, $pink);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        z-index: 2;
+      }
+
+      input:checked ~ .fa-regular {
+        opacity: 0; 
+      }
+
+      input:checked ~ .fa-solid {
+        animation: pulse 0.3s; 
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+  } 
+}

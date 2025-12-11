@@ -1,0 +1,48 @@
+$size: 3vh;
+$num-bars: 5;
+$anim-dur: 1000ms;
+$anim-delay: $anim-dur / $num-bars;
+
+
+@keyframes bars {
+    0% {
+        transform: scaleY(0.5);
+        
+    }
+    100% {
+        transform: scaleY(1.0);
+    }
+}
+
+
+#loading{
+    z-index: 20;
+    height: 100%;
+    width: 100%;
+    min-height: 756px;
+    animation: hiden 0ms 3s both;
+    position: absolute;
+
+    .load {
+        position: relative;
+        top: calc(45% - 85px);
+        left: calc(50% - 113px);
+        width: $size*10;
+        height: $size*7.5;
+        display: flex;
+        justify-content: space-evenly;
+        &__bar {
+            background: linear-gradient(purple,pink);
+            border-radius: $size/2;
+            height: 100%;
+            width: $size;
+            animation: bars $anim-dur alternate backwards infinite;
+        
+            @for $i from 1 through $num-bars {
+                &--#{$i} {
+                    animation-delay: $anim-delay * $i;
+                }
+            }
+        }
+    }
+}
