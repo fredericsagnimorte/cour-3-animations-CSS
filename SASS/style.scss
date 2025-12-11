@@ -38,9 +38,7 @@ p, h3{
   margin: 0;
 }
 
-header,
-main,
-footer{
+#appear{
   animation: spawn 0ms 3s both;
 }
 
@@ -464,7 +462,7 @@ footer{
 
     .cards{
     justify-content: space-between;
-    gap: 0;
+    
         .card{
           height: 251px;
           width: 490px;

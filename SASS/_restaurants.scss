@@ -1,4 +1,14 @@
 // les restaurants
+header{
+  a{
+    text-decoration: none;
+
+    i{
+      color: $grey;
+    }
+  }
+}
+
 #banner{
   z-index: -1;
   img{
@@ -19,6 +29,121 @@
     margin: 0 0 20px 20px;
     font-size: 1.75em;
     font-weight: normal;
+  }
+
+  .menu{
+    margin: 0 20px;
+
+    .entrees{
+      margin-bottom: 30px;
+    }
+
+    .plats{
+      margin-bottom: 30px;
+    }
+
+    .subtitle{
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 12px;
+      gap: 5px;
+
+      .underline{
+        width: 40px;
+        height: 0;
+        border-top: 3px solid #99E2D0;
+      }
+
+      h3{
+        font-size: 1em;
+        font-weight: 300;
+      }
+    }
+
+    .cards{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 12px;
+      min-width: 304px;
+      margin: 0 15px;
+
+      .card{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        box-shadow: 0px 4.01px 15.04px 0px rgba(0, 0, 0, 0.1);
+        border-radius: 15.04px;
+        background: white;
+        padding: 15.04px;
+        max-height: 69px;
+        width: 100%;
+        
+        .card-left{
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-start;
+          flex-direction: column;
+
+          .plat{
+            font-size: 1.125em;
+            font-weight: 500;
+            font-family: $primary-font;
+            padding-bottom: 5px;
+          }
+
+          .description{
+            font-size: 15px;
+            font-weight: 300;
+          }
+        }
+
+        .card-right{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          gap: 10px;
+
+          .check__elements{
+            position: relative;
+
+            input{
+              position: absolute;
+              top: auto;
+              right: auto;
+              opacity: 0;
+              z-index: 2;
+
+              &:checked{
+                + i{
+                  color: green;
+                  opacity: 1;
+                  transition: opacity 0.3s;
+                  animation: check 0.3s both;
+                }
+              }
+            }
+
+            i{
+              
+              color: black;
+              opacity: 0.1;
+              transition: opacity 0.3s;
+              z-index: 1;
+            }
+          }
+        }
+        
+
+        .price{
+          font-size: 15px;
+          font-weight: 700;
+          font-family: $primary-font;
+        }
+      }
+    }
   }
 
   .heart-checkbox {
@@ -80,4 +205,51 @@
       }
     }
   } 
+
+  .command{
+    padding: 50px calc(50% - 109px);
+
+    a{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 50px;
+      width: 218px;
+      font-style: normal;
+      color: white;
+      background: linear-gradient($pink,$purple);
+      font-family: $primary-font;
+      text-decoration: none;
+      border-radius: 25px;
+      box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+      transition: opacity 300ms;
+      position: relative;
+      z-index: 1;
+      
+      &:hover{
+        &::after{
+          opacity: 1;
+        }
+      }
+
+      &::after{
+        content: "";
+        position: absolute;
+        top:0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(lighten($pink,15%),lighten($purple,15%));
+        box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
+        transition: opacity 300ms;
+        opacity: 0;
+        border-radius: 25px;
+        z-index: -1;
+      }
+
+      &:active{
+        animation: pulse 0.1s;
+      }
+    }
+  }
 }

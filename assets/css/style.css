@@ -1,6 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css");
+header a {
+  text-decoration: none;
+}
+header a i {
+  color: #353535;
+}
+
 #banner {
   z-index: -1;
 }
@@ -21,6 +28,100 @@
   margin: 0 0 20px 20px;
   font-size: 1.75em;
   font-weight: normal;
+}
+#menu .menu {
+  margin: 0 20px;
+}
+#menu .menu .entrees {
+  margin-bottom: 30px;
+}
+#menu .menu .plats {
+  margin-bottom: 30px;
+}
+#menu .menu .subtitle {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 12px;
+  gap: 5px;
+}
+#menu .menu .subtitle .underline {
+  width: 40px;
+  height: 0;
+  border-top: 3px solid #99E2D0;
+}
+#menu .menu .subtitle h3 {
+  font-size: 1em;
+  font-weight: 300;
+}
+#menu .menu .cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 304px;
+  margin: 0 15px;
+}
+#menu .menu .cards .card {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  box-shadow: 0px 4.01px 15.04px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 15.04px;
+  background: white;
+  padding: 15.04px;
+  max-height: 69px;
+  width: 100%;
+}
+#menu .menu .cards .card .card-left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+#menu .menu .cards .card .card-left .plat {
+  font-size: 1.125em;
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+  padding-bottom: 5px;
+}
+#menu .menu .cards .card .card-left .description {
+  font-size: 15px;
+  font-weight: 300;
+}
+#menu .menu .cards .card .card-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+#menu .menu .cards .card .card-right .check__elements {
+  position: relative;
+}
+#menu .menu .cards .card .card-right .check__elements input {
+  position: absolute;
+  top: auto;
+  right: auto;
+  opacity: 0;
+  z-index: 2;
+}
+#menu .menu .cards .card .card-right .check__elements input:checked + i {
+  color: green;
+  opacity: 1;
+  transition: opacity 0.3s;
+  animation: check 0.3s both;
+}
+#menu .menu .cards .card .card-right .check__elements i {
+  color: black;
+  opacity: 0.1;
+  transition: opacity 0.3s;
+  z-index: 1;
+}
+#menu .menu .cards .card .price {
+  font-size: 15px;
+  font-weight: 700;
+  font-family: "Roboto", sans-serif;
 }
 #menu .heart-checkbox {
   position: absolute;
@@ -73,6 +174,46 @@
   animation: pulse 0.3s;
   transform: scale(1);
   opacity: 1;
+}
+#menu .command {
+  padding: 50px calc(50% - 109px);
+}
+#menu .command a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 218px;
+  font-style: normal;
+  color: white;
+  background: linear-gradient(#FF79DA, #9356DC);
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
+  border-radius: 25px;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  transition: opacity 300ms;
+  position: relative;
+  z-index: 1;
+}
+#menu .command a:hover::after {
+  opacity: 1;
+}
+#menu .command a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(rgb(255, 197.5, 239.1231343284), rgb(187.5, 149.375, 233.125));
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
+  transition: opacity 300ms;
+  opacity: 0;
+  border-radius: 25px;
+  z-index: -1;
+}
+#menu .command a:active {
+  animation: pulse 0.1s;
 }
 
 @keyframes bars {
@@ -147,6 +288,14 @@
     transform: translateX(0);
   }
 }
+@keyframes check {
+  0% {
+    transform: translateX(-20px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 h1, .logo {
   font-family: "Shrikhand", cursive;
 }
@@ -159,9 +308,7 @@ p, h3 {
   margin: 0;
 }
 
-header,
-main,
-footer {
+#appear {
   animation: spawn 0ms 3s both;
 }
 
@@ -531,7 +678,6 @@ footer a {
   }
   #restaurants .cards {
     justify-content: space-between;
-    gap: 0;
   }
   #restaurants .cards .card {
     height: 251px;
