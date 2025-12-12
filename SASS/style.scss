@@ -13,7 +13,7 @@ $green : #008766;
 $light-green : #99E2D0;
 $background : #F6F6F6;
 $grey : #353535;
-$grey-icons : #7E7E7E; 
+$grey-icons : #7E7E7E;
 $grey2 :#EAEAEA;
 
 // définition de la police d'écriture
@@ -26,33 +26,37 @@ $font-logo: 'Shrikhand', cursive;
 @import "keyframe";
 
 // ajout de la police aux diférent éléments
-h1, .logo {
+h1,
+.logo {
   font-family: $font-logo;
 }
 
-p , h2, h3 {
+p,
+h2,
+h3 {
   font-family: $primary-font;
 }
 
-p, h3{
+p,
+h3 {
   margin: 0;
 }
 
-#appear{
+#appear {
   animation: spawn 0ms 3s both;
 }
 
 
-html{
+html {
   width: 100%;
 }
 
-body{
+body {
   margin: 0;
 }
 
 
-header{
+header {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -60,13 +64,13 @@ header{
   position: relative;
   z-index: 10;
 
-  img{
+  img {
     width: 197px;
     height: 36px;
     margin: 14px 89px;
   }
 
-  a{
+  a {
     position: absolute;
     top: 24px;
     left: 20px;
@@ -75,25 +79,26 @@ header{
 
 
 
-#reservation{
+#reservation {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: $background;
   padding-bottom: 55px;
+
   .search {
     position: relative;
     width: 100%;
     height: 50px;
-    
-      &::before {
+
+    &::before {
       content: "\f3c5";
       font-family: "Font Awesome 6 Free";
       font-weight: 900;
       position: absolute;
-      left: 50%;               
-      transform: translateX(calc(-50% - 80px));  
+      left: 50%;
+      transform: translateX(calc(-50% - 80px));
       top: 50%;
       translate: 0 -50%;
       color: $grey;
@@ -105,30 +110,32 @@ header{
       opacity: 0;
     }
 
-    input{
+    input {
       border: 0;
       padding: 0;
     }
   }
-  
-  .explore{
+
+  .explore {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    h2, p{
+
+    h2,
+    p {
       text-align: center;
       font-family: $primary-font;
     }
 
-    h2{
+    h2 {
       font-size: 24px;
       padding: 0 15%;
       margin-top: 39px;
       margin-bottom: 10px;
     }
 
-    p{
+    p {
       padding: 0 6%;
       margin-top: 0;
       font-weight: 300;
@@ -136,7 +143,7 @@ header{
       color: $grey;
     }
 
-    a{
+    a {
       margin-top: 18px;
       display: flex;
       align-items: center;
@@ -145,7 +152,7 @@ header{
       width: 218px;
       font-style: normal;
       color: white;
-      background: linear-gradient($pink,$purple);
+      background: linear-gradient($pink, $purple);
       font-family: $primary-font;
       text-decoration: none;
       border-radius: 25px;
@@ -153,21 +160,21 @@ header{
       transition: opacity 300ms;
       position: relative;
       z-index: 1;
-      
-      &:hover{
-        &::after{
+
+      &:hover {
+        &::after {
           opacity: 1;
         }
       }
 
-      &::after{
+      &::after {
         content: "";
         position: absolute;
-        top:0;
+        top: 0;
         right: 0;
         bottom: 0;
         left: 0;
-        background: linear-gradient(lighten($pink,15%),lighten($purple,15%));
+        background: linear-gradient(lighten($pink, 15%), lighten($purple, 15%));
         box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
         transition: opacity 300ms;
         opacity: 0;
@@ -242,7 +249,8 @@ header{
         i {
           font-size: 24px;
           color: $grey-icons;
-          &.purple-icon{
+
+          &.purple-icon {
             color: $purple;
           }
         }
@@ -255,7 +263,7 @@ header{
   }
 }
 
-#restaurants{
+#restaurants {
   background-color: $background;
   padding: 50px 20px;
   display: flex;
@@ -264,11 +272,11 @@ header{
   flex-direction: column;
   gap: 20px;
 
-  h2{
+  h2 {
     margin-bottom: 5px;
   }
 
-  .cards{
+  .cards {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -276,7 +284,7 @@ header{
     gap: 20px;
   }
 
-  .card{
+  .card {
     height: 251px;
     width: 340px;
     max-height: 251px;
@@ -330,33 +338,33 @@ header{
         .fa-solid {
           transform: scale(0);
           opacity: 0;
-          color: transparent; 
+          color: transparent;
           background: linear-gradient($purple, $pink);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           z-index: 2;
         }
 
-        input:checked ~ .fa-regular {
-          opacity: 0; 
+        input:checked~.fa-regular {
+          opacity: 0;
         }
 
-        input:checked ~ .fa-solid {
-          animation: pulse 0.3s; 
+        input:checked~.fa-solid {
+          animation: pulse 0.3s;
           transform: scale(1);
           opacity: 1;
         }
       }
-    } 
+    }
   }
 
-  a{
+  a {
     text-decoration: none;
     color: inherit;
     display: block;
     position: relative;
-    
-    .new{
+
+    .new {
       width: 80px;
       height: 29px;
       background-color: $light-green;
@@ -367,17 +375,17 @@ header{
       color: #008766;
       position: absolute;
       right: 15px;
-      top : 80px;
+      top: 80px;
     }
   }
-      
-  img{
+
+  img {
     height: 231px;
     width: 346px;
     object-fit: cover;
   }
-      
-  .card-content{
+
+  .card-content {
     padding: 0 20px;
     min-height: 80px;
     width: 300px;
@@ -386,37 +394,37 @@ header{
     align-items: center;
     flex-direction: row;
 
-    .card-title{
+    .card-title {
       font-size: 18px;
     }
   }
 }
 
-footer{
+footer {
   background: $grey;
   color: white;
   padding-left: 20px;
 
-  h2{
+  h2 {
     font-family: $font-logo;
-    margin:0 0 20px 0;
+    margin: 0 0 20px 0;
     padding-top: 20px;
     font-weight: 400;
     font-size: 18px;
   }
 
-  ul{
+  ul {
     list-style: none;
     font-family: $primary-font;
     margin: 0;
     padding: 0 0 30px 0;
 
-    li{
+    li {
       margin-top: 10px;
     }
   }
 
-  a{
+  a {
     text-decoration: none;
     color: white;
   }
@@ -425,97 +433,97 @@ footer{
 
 // affichage desktop
 @media screen and (min-width:1024px) {
-  #reservation{
-    .explore{
+  #reservation {
+    .explore {
       width: 100%;
       gap: 20px;
 
-      h2{
+      h2 {
         font-size: 40px;
         font-weight: 700;
       }
     }
   }
 
-  #fonctionnement{
+  #fonctionnement {
     max-width: 1054px;
     width: 100%;
     margin: 0 auto;
 
-    ol{
+    ol {
       display: flex;
       justify-content: space-between;
       align-items: center;
 
-      li{
+      li {
         width: 30%;
       }
     }
   }
 
-  #restaurants{
-    .width-ajust{
+  #restaurants {
+    .width-ajust {
       max-width: 1054px;
       width: 100%;
       margin: 0 auto;
     }
 
-    .cards{
-    justify-content: space-between;
-    
-        .card{
-          height: 251px;
-          width: 490px;
-          max-height: 251px;
-          display: flex;
-          justify-content: flex-end;
-          align-items: center;
-          flex-direction: column;
-          overflow: hidden;
-          border-radius: 15px;
-          background: white;
+    .cards {
+      justify-content: space-between;
+
+      .card {
+        height: 251px;
+        width: 490px;
+        max-height: 251px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        flex-direction: column;
+        overflow: hidden;
+        border-radius: 15px;
+        background: white;
+        position: relative;
+
+        a {
+          text-decoration: none;
+          color: inherit;
+          display: block;
           position: relative;
-          
-          a{
-            text-decoration: none;
-            color: inherit;
-            display: block;
-            position: relative;
+          width: 100%;
+
+          img {
             width: 100%;
-            
-            img{
-              width: 100%;
-              object-fit: cover;
-            }
+            object-fit: cover;
           }
-          
-          .heart-checkbox {
-            &__elements {
-              input:hover ~ .fa-solid{
-                opacity: 1;
-                transform: scale(1);
-                transition: transform 0.3s;
-              }
-              
-              input:hover ~ .fa-regular{
-                transform: scale(0);
-                transition: transform 0ms 290ms;
-              }
+        }
+
+        .heart-checkbox {
+          &__elements {
+            input:hover~.fa-solid {
+              opacity: 1;
+              transform: scale(1);
+              transition: transform 0.3s;
+            }
+
+            input:hover~.fa-regular {
+              transform: scale(0);
+              transition: transform 0ms 290ms;
             }
           }
         }
       }
     }
-    
-    footer{
-      background: $grey;
-      color: white;
-    padding: 30px 30px 20px 20px;
+  }
+
+  footer {
+    background: $grey;
+    color: white;
+    padding: 50px 30px 30px 20px;
     display: flex;
     justify-content: flex-end;
     gap: 60px;
 
-    h2{
+    h2 {
       font-family: $font-logo;
       margin: 0;
       padding: 0;
@@ -523,7 +531,7 @@ footer{
       order: 2;
     }
 
-    ul{
+    ul {
       list-style: none;
       font-family: $primary-font;
       margin: 0;
@@ -535,15 +543,14 @@ footer{
       flex-direction: row;
       gap: 20px;
 
-      li{
+      li {
         margin: 0;
-        
-        a{
+
+        a {
           display: inline-flex;
-          gap:10px;
+          gap: 10px;
         }
       }
     }
   }
-
 }

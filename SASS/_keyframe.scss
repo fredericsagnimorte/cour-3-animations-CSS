@@ -3,9 +3,11 @@
   0% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.2);
   }
+
   100% {
     transform: scale(1);
   }
@@ -13,7 +15,7 @@
 
 @keyframes hiden {
   100% {
-    display:none;
+    display: none;
   }
 }
 
@@ -21,6 +23,7 @@
   0% {
     transform: translateX(-9999px);
   }
+
   100% {
     transform: translateX(0);
   }
@@ -28,9 +31,34 @@
 
 @keyframes check {
   0% {
-    transform: translateX(-20px)
+    transform: translateX(20px)
   }
-  100%{
+
+  100% {
     transform: translateX(0);
+  }
+}
+
+@keyframes uncheck {
+  0% {
+    transform: translateX(0px)
+  }
+
+  99% {
+    transform: translateX(20px);
+  }
+
+  100% {
+    transform: translateX(0px)
+  }
+}
+
+@keyframes translate {
+  0% {
+    transform: translateX(-9999px);
+  }
+
+  100% {
+    transform: translate(0);
   }
 }

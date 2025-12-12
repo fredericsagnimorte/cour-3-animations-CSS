@@ -1,22 +1,34 @@
 // les restaurants
-header{
-  a{
+
+header {
+  z-index: 1;
+
+  a {
     text-decoration: none;
 
-    i{
+    i {
       color: $grey;
     }
   }
 }
 
-#banner{
-  z-index: -1;
-  img{
+#banner {
+  position: relative;
+  height: 275px;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
   }
 }
 
-#menu{
+#menu {
   z-index: 1;
   border-radius: 20px 20px 0 0;
   background-color: $background;
@@ -24,43 +36,69 @@ header{
   margin-top: -50px;
   position: relative;
 
-  h2{
+  h2 {
     font-family: $font-logo;
     margin: 0 0 20px 20px;
     font-size: 1.75em;
     font-weight: normal;
   }
 
-  .menu{
+  .menu {
     margin: 0 20px;
 
-    .entrees{
-      margin-bottom: 30px;
+    .translate {
+      animation: translate 500ms cubic-bezier(.23, 0, .13, 1) both;
     }
 
-    .plats{
+    .entrees {
       margin-bottom: 30px;
+
+      @for $i from 1 through 10 {
+        .translate:nth-child(#{$i}) {
+          animation-delay: ($i - 1) * 150ms;
+        }
+      }
     }
 
-    .subtitle{
+    .plats {
+      margin-bottom: 30px;
+
+      @for $i from 1 through 10 {
+        .translate:nth-child(#{$i}) {
+          $offset: 4;
+          animation-delay: ($offset + $i - 1) * 150ms;
+        }
+      }
+    }
+
+    .desserts {
+      @for $i from 1 through 10 {
+        .translate:nth-child(#{$i}) {
+          $offset: 9;
+          animation-delay: ($offset + $i - 1) * 150ms;
+        }
+      }
+    }
+
+    .subtitle {
       display: flex;
       flex-direction: column;
       padding-bottom: 12px;
       gap: 5px;
 
-      .underline{
+      .underline {
         width: 40px;
         height: 0;
         border-top: 3px solid #99E2D0;
       }
 
-      h3{
+      h3 {
         font-size: 1em;
         font-weight: 300;
       }
     }
 
-    .cards{
+    .cards {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -69,7 +107,7 @@ header{
       min-width: 304px;
       margin: 0 15px;
 
-      .card{
+      .card {
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
@@ -79,45 +117,45 @@ header{
         padding: 15.04px;
         max-height: 69px;
         width: 100%;
-        
-        .card-left{
+
+        .card-left {
           display: flex;
           justify-content: flex-start;
           align-items: flex-start;
           flex-direction: column;
 
-          .plat{
+          .plat {
             font-size: 1.125em;
             font-weight: 500;
             font-family: $primary-font;
             padding-bottom: 5px;
           }
 
-          .description{
+          .description {
             font-size: 15px;
             font-weight: 300;
           }
         }
 
-        .card-right{
+        .card-right {
           display: flex;
           justify-content: center;
           align-items: center;
           flex-direction: column;
           gap: 10px;
 
-          .check__elements{
+          .check__elements {
             position: relative;
 
-            input{
+            input {
               position: absolute;
               top: auto;
               right: auto;
               opacity: 0;
               z-index: 2;
 
-              &:checked{
-                + i{
+              &:checked {
+                +i {
                   color: green;
                   opacity: 1;
                   transition: opacity 0.3s;
@@ -126,8 +164,8 @@ header{
               }
             }
 
-            i{
-              
+            i {
+              animation: uncheck 0.3s backwards;
               color: black;
               opacity: 0.1;
               transition: opacity 0.3s;
@@ -135,9 +173,8 @@ header{
             }
           }
         }
-        
 
-        .price{
+        .price {
           font-size: 15px;
           font-weight: 700;
           font-family: $primary-font;
@@ -187,29 +224,29 @@ header{
       .fa-solid {
         transform: scale(0);
         opacity: 0;
-        color: transparent; 
+        color: transparent;
         background: linear-gradient($purple, $pink);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         z-index: 2;
       }
 
-      input:checked ~ .fa-regular {
-        opacity: 0; 
+      input:checked~.fa-regular {
+        opacity: 0;
       }
 
-      input:checked ~ .fa-solid {
-        animation: pulse 0.3s; 
+      input:checked~.fa-solid {
+        animation: pulse 0.3s;
         transform: scale(1);
         opacity: 1;
       }
     }
-  } 
+  }
 
-  .command{
+  .command {
     padding: 50px calc(50% - 109px);
 
-    a{
+    a {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -217,7 +254,7 @@ header{
       width: 218px;
       font-style: normal;
       color: white;
-      background: linear-gradient($pink,$purple);
+      background: linear-gradient($pink, $purple);
       font-family: $primary-font;
       text-decoration: none;
       border-radius: 25px;
@@ -225,21 +262,21 @@ header{
       transition: opacity 300ms;
       position: relative;
       z-index: 1;
-      
-      &:hover{
-        &::after{
+
+      &:hover {
+        &::after {
           opacity: 1;
         }
       }
 
-      &::after{
+      &::after {
         content: "";
         position: absolute;
-        top:0;
+        top: 0;
         right: 0;
         bottom: 0;
         left: 0;
-        background: linear-gradient(lighten($pink,15%),lighten($purple,15%));
+        background: linear-gradient(lighten($pink, 15%), lighten($purple, 15%));
         box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
         transition: opacity 300ms;
         opacity: 0;
@@ -247,8 +284,45 @@ header{
         z-index: -1;
       }
 
-      &:active{
+      &:active {
         animation: pulse 0.1s;
+      }
+    }
+  }
+}
+
+@media screen and (min-width:1024px) {
+  #banner {
+    height: 383px;
+  }
+
+  #menu {
+    max-width: 1055px;
+    margin: -20px calc(50% - 527.5px) 0 calc(50% - 527.5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    h2 {
+      margin-left: 0;
+    }
+
+    .heart-checkbox {
+      position: absolute;
+      left: calc(13.62% + calc(153px + 37%));
+      top: 25px;
+    }
+
+    .menu {
+      width: 65%;
+
+      .entrees {
+        margin-bottom: 50px;
+      }
+
+      .plats {
+        margin-bottom: 50px;
       }
     }
   }
