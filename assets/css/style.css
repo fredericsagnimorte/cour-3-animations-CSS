@@ -268,6 +268,7 @@ header a i {
 #menu .heart-checkbox__elements .fa-solid {
   transform: scale(0);
   opacity: 0;
+  transition: transform 0.3s, opacity 0.3s;
   color: transparent;
   background: linear-gradient(#9356DC, #FF79DA);
   -webkit-background-clip: text;
@@ -342,6 +343,15 @@ header a i {
     position: absolute;
     left: calc(13.62% + 153px + 37%);
     top: 25px;
+  }
+  #menu .heart-checkbox__elements input:hover ~ .fa-solid {
+    opacity: 1;
+    transform: scale(1);
+    transition: transform 0.3s;
+  }
+  #menu .heart-checkbox__elements input:hover ~ .fa-regular {
+    transform: scale(0);
+    transition: transform 0ms 290ms;
   }
   #menu .menu {
     width: 65%;
@@ -735,6 +745,7 @@ header a {
 #restaurants .card .heart-checkbox__elements .fa-solid {
   transform: scale(0);
   opacity: 0;
+  transition: transform 0.3s, opacity 0.3s;
   color: transparent;
   background: linear-gradient(#9356DC, #FF79DA);
   -webkit-background-clip: text;

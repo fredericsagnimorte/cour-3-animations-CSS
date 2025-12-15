@@ -338,6 +338,7 @@ header {
         .fa-solid {
           transform: scale(0);
           opacity: 0;
+          transition: transform 0.3s, opacity 0.3s;
           color: transparent;
           background: linear-gradient($purple, $pink);
           -webkit-background-clip: text;

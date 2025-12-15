@@ -224,6 +224,7 @@ header {
       .fa-solid {
         transform: scale(0);
         opacity: 0;
+        transition: transform 0.3s, opacity 0.3s;
         color: transparent;
         background: linear-gradient($purple, $pink);
         -webkit-background-clip: text;
@@ -312,6 +313,19 @@ header {
       position: absolute;
       left: calc(13.62% + calc(153px + 37%));
       top: 25px;
+
+      &__elements {
+        input:hover~.fa-solid {
+          opacity: 1;
+          transform: scale(1);
+          transition: transform 0.3s;
+        }
+
+        input:hover~.fa-regular {
+          transform: scale(0);
+          transition: transform 0ms 290ms;
+        }
+      }
     }
 
     .menu {
