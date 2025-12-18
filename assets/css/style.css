@@ -11,6 +11,10 @@ header a i {
   color: #353535;
 }
 
+main {
+  overflow: hidden;
+}
+
 #banner {
   position: relative;
   height: 275px;
@@ -85,34 +89,34 @@ header a i {
   margin-bottom: 30px;
 }
 #menu .menu .plats .translate:nth-child(1) {
-  animation-delay: 600ms;
-}
-#menu .menu .plats .translate:nth-child(2) {
   animation-delay: 750ms;
 }
-#menu .menu .plats .translate:nth-child(3) {
+#menu .menu .plats .translate:nth-child(2) {
   animation-delay: 900ms;
 }
-#menu .menu .plats .translate:nth-child(4) {
+#menu .menu .plats .translate:nth-child(3) {
   animation-delay: 1050ms;
 }
-#menu .menu .plats .translate:nth-child(5) {
+#menu .menu .plats .translate:nth-child(4) {
   animation-delay: 1200ms;
 }
-#menu .menu .plats .translate:nth-child(6) {
+#menu .menu .plats .translate:nth-child(5) {
   animation-delay: 1350ms;
 }
-#menu .menu .plats .translate:nth-child(7) {
+#menu .menu .plats .translate:nth-child(6) {
   animation-delay: 1500ms;
 }
-#menu .menu .plats .translate:nth-child(8) {
+#menu .menu .plats .translate:nth-child(7) {
   animation-delay: 1650ms;
 }
-#menu .menu .plats .translate:nth-child(9) {
+#menu .menu .plats .translate:nth-child(8) {
   animation-delay: 1800ms;
 }
-#menu .menu .plats .translate:nth-child(10) {
+#menu .menu .plats .translate:nth-child(9) {
   animation-delay: 1950ms;
+}
+#menu .menu .plats .translate:nth-child(10) {
+  animation-delay: 2100ms;
 }
 #menu .menu .desserts .translate:nth-child(1) {
   animation-delay: 1350ms;
@@ -166,66 +170,84 @@ header a i {
   flex-direction: column;
   gap: 12px;
   min-width: 304px;
-  margin: 0 15px;
+  margin: 0;
 }
 #menu .menu .cards .card {
+  box-sizing: border-box;
+  position: relative;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  justify-content: flex-start;
+  align-items: center;
   box-shadow: 0px 4.01px 15.04px 0px rgba(0, 0, 0, 0.1);
   border-radius: 15.04px;
   background: white;
   padding: 15.04px;
   max-height: 69px;
   width: 100%;
+  overflow: hidden;
+}
+#menu .menu .cards .card label {
+  cursor: pointer;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  inset: 0;
+}
+#menu .menu .cards .card .check {
+  position: absolute;
+  top: auto;
+  right: auto;
+  opacity: 0;
+}
+#menu .menu .cards .card .check:checked + .card-left {
+  min-width: calc(100% - 90px);
+  transition: min-width 1s;
 }
 #menu .menu .cards .card .card-left {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
+  min-width: calc(100% - 30px);
+  flex: 1;
+  flex-wrap: nowrap;
+  transition: min-width 1s;
 }
 #menu .menu .cards .card .card-left .plat {
   font-size: 1.125em;
   font-weight: 500;
   font-family: "Roboto", sans-serif;
   padding-bottom: 5px;
+  text-overflow: ellipsis;
+  width: 100%;
+  text-wrap: nowrap;
+  overflow: hidden;
 }
 #menu .menu .cards .card .card-left .description {
   font-size: 15px;
   font-weight: 300;
+  text-overflow: ellipsis;
+  width: 100%;
+  text-wrap: nowrap;
+  overflow: hidden;
 }
 #menu .menu .cards .card .card-right {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  gap: 10px;
-}
-#menu .menu .cards .card .card-right .check__elements {
-  position: relative;
-}
-#menu .menu .cards .card .card-right .check__elements input {
-  position: absolute;
-  top: auto;
-  right: auto;
-  opacity: 0;
-  z-index: 2;
-}
-#menu .menu .cards .card .card-right .check__elements input:checked + i {
-  color: green;
-  opacity: 1;
-  transition: opacity 0.3s;
-  animation: check 0.3s both;
-}
-#menu .menu .cards .card .card-right .check__elements i {
-  animation: uncheck 0.3s backwards;
-  color: black;
-  opacity: 0.1;
-  transition: opacity 0.3s;
+  flex-direction: row;
+  flex-shrink: 0;
   z-index: 1;
 }
+#menu .menu .cards .card .card-right i {
+  color: white;
+  background-color: #99E2D0;
+  padding: 30px 31px 30px 21px;
+}
 #menu .menu .cards .card .price {
+  width: 30px;
+  margin-right: 15px;
   font-size: 15px;
   font-weight: 700;
   font-family: "Roboto", sans-serif;
@@ -436,25 +458,6 @@ header a i {
   }
   100% {
     transform: translateX(0);
-  }
-}
-@keyframes check {
-  0% {
-    transform: translateX(20px);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-@keyframes uncheck {
-  0% {
-    transform: translateX(0px);
-  }
-  99% {
-    transform: translateX(20px);
-  }
-  100% {
-    transform: translateX(0px);
   }
 }
 @keyframes translate {

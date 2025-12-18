@@ -32,30 +32,6 @@
   }
 }
 
-@keyframes check {
-  0% {
-    transform: translateX(20px)
-  }
-
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes uncheck {
-  0% {
-    transform: translateX(0px)
-  }
-
-  99% {
-    transform: translateX(20px);
-  }
-
-  100% {
-    transform: translateX(0px)
-  }
-}
-
 @keyframes translate {
   0% {
     transform: translateX(-9999px);
