@@ -32,7 +32,7 @@ $anim-delay: $anim-dur / $num-bars;
         display: flex;
         justify-content: space-evenly;
         &__bar {
-            background: linear-gradient(purple,pink);
+            background: linear-gradient($pink,$purple);
             border-radius: $size/2;
             height: 100%;
             width: $size;

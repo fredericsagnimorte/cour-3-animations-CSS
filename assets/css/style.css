@@ -411,7 +411,7 @@ main {
   justify-content: space-evenly;
 }
 #loading .load__bar {
-  background: linear-gradient(purple, pink);
+  background: linear-gradient(#FF79DA, #9356DC);
   border-radius: 1.5vh;
   height: 100%;
   width: 3vh;
